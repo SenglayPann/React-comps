@@ -1,11 +1,19 @@
-import { useState } from 'react'
-import Button from './components/Button'
-import './style/output.css'
+import { useState } from 'react';
+import Button from './components/Button';
+import { GoDatabase } from "react-icons/go";
+import './style/output.css';
 function App() {
+  const handleClick = () => {
+    console.log('clicked')
+  }
+
+  const handleHover = () => {
+    console.log('hovering')
+  }
 
   return (
     <div>
-      <Button primary outline >Register</Button>
+      <Button primary outline onClick={ handleClick } onMouseOver={ handleHover}><GoDatabase />Register</Button>
       <Button secondary outline rounded >Register</Button>
       <Button success rounded >Register</Button>
       <Button warning outline rounded>Register</Button>
