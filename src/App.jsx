@@ -1,23 +1,20 @@
 import { useState } from 'react';
-import Button from './components/Button';
-import { GoDatabase } from "react-icons/go";
+import DropDown from './components/dropDown';
 import './style/output.css';
 function App() {
-  const handleClick = () => {
-    console.log('clicked')
-  }
+  const options = [
+    {value: 'red', label: 'red'},
+    {value: 'green', label: 'green'},
+    {value: 'blue', label: 'blue'},
+  ];
 
-  const handleHover = () => {
-    console.log('hovering')
-  }
+  const [selection, setSelection] = useState('select...');
 
-  return (
-    <div>
-      <Button primary outline onClick={ handleClick } onMouseOver={ handleHover}><GoDatabase />Register</Button>
-      <Button secondary outline rounded >Register</Button>
-      <Button success rounded >Register</Button>
-      <Button warning outline rounded>Register</Button>
-    </div>
+  const handleSelection = (value) => {
+    setSelection(value);
+  }
+  return ( 
+    <DropDown options={ options } value={ selection } onChange={ handleSelection }/>
   )
 }
 
