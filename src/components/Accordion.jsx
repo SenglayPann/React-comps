@@ -10,9 +10,7 @@ function Accordion({ items }) {
 
     const renderItems = items.map((item, index) => {
         const isExpanded = index === expandedIndex;
-        const content = isExpanded && <div 
-                                            className=" p-5"
-                                            >{item.content}</div>;
+        const content = isExpanded && <div className=" p-5">{item.content}</div>;
         const icon = <span>{ isExpanded ? <TiArrowSortedUp /> : <TiArrowSortedDown />}</span>
         return (
             <div 
@@ -22,7 +20,7 @@ function Accordion({ items }) {
                     onClick={() => handleExpandAcc(index)}
                     className=" flex p-3 justify-between bg-gray-50 border-b items-center cursor-pointer"
                     >
-                        {item.label} { icon }
+                        {item.label}{ icon }
                     </div>
                 {content}
             </div>
@@ -32,7 +30,7 @@ function Accordion({ items }) {
     return (
         <div 
             className="border-x border-t rounded"
-            >{renderItems}</div>
+        >{renderItems}</div>
     )
 }
 

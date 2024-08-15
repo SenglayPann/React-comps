@@ -1,5 +1,5 @@
 
-import Accordion from '../components/Acccordion';
+import Accordion from '../components/Accordion';
 import '../style/output.css';
 function AccordionPage() {
   
