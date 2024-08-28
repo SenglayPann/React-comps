@@ -7,14 +7,14 @@ function Table({data, config, FnKey}) {
 
     const renderedRows = data.map(rowData => {
         const  renderedCells = config.map(column => {
-            return <td key={column.name} className="py-2">{column.render(rowData)}</td>
+            return <td key={column.label} className="py-2">{column.render(rowData)}</td>
         });
 
         return (
-            <tr key={rowData.name} className="border-b">
+            <tr key={FnKey(rowData)} className="border-b">
                 {renderedCells}
             </tr>
-        )
+        );
     })
 
     return (
@@ -28,7 +28,7 @@ function Table({data, config, FnKey}) {
                 {renderedRows}
             </tbody>
         </table>
-    )
+    );
 }
 
 export default Table
