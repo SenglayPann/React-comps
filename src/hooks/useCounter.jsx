@@ -7,13 +7,23 @@ function useCounter(initialCount) {
         console.log(count)
     },[count]);
 
-    const handleClick = () => {
+    const increment = () => {
         setCount(count + 1);
     };
 
+    const decrement = () => {
+        setCount(count - 1);
+    }
+
+    const addBy = (amount) => {
+        setCount(count + amount);
+    }
+
     return {
         count, 
-        handleClick
+        increment,
+        decrement,
+        addBy
     };
 }
 
